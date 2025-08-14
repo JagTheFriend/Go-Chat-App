@@ -31,8 +31,7 @@ It allows users to send and receive messages in real-time.
 ## Features
 
 * Real-time messaging
-* User registration and authentication
-* Message routing and handling
+* User (along with Message) routing and handling
 
 ## Usage
 
