@@ -1,0 +1,229 @@
+{
+  "yaakVersion": "2025.5.6",
+  "yaakSchema": 4,
+  "timestamp": "2025-08-14T07:40:28.338874400",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_kAtLv53kSe",
+        "createdAt": "2025-08-13T16:52:06.008154100",
+        "updatedAt": "2025-08-13T16:52:06.008154600",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Golang Backend",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [
+      {
+        "model": "environment",
+        "id": "ev_9gGXu3gEUs",
+        "workspaceId": "wk_kAtLv53kSe",
+        "createdAt": "2025-08-13T16:52:06.041400200",
+        "updatedAt": "2025-08-13T16:52:29.337002700",
+        "name": "Global Variables",
+        "public": false,
+        "base": true,
+        "variables": [
+          {
+            "enabled": true,
+            "name": "BASE_URL",
+            "value": "http://localhost:8080",
+            "id": "sRI3FDSZiv"
+          }
+        ],
+        "color": null
+      }
+    ],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_iEizASKBw4",
+        "createdAt": "2025-08-13T16:56:05.221455500",
+        "updatedAt": "2025-08-13T16:56:13.239160500",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Message",
+        "sortPriority": -1755103900000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_kWWBg3paMf",
+        "createdAt": "2025-08-13T16:52:11.318225400",
+        "updatedAt": "2025-08-13T16:52:11.318226",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "User",
+        "sortPriority": -1755103900000.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_PAwMnPxtgo",
+        "createdAt": "2025-08-13T16:56:05.227058100",
+        "updatedAt": "2025-08-13T16:58:19.440802200",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_iEizASKBw4",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Get Message",
+        "sortPriority": -1755103955187.0,
+        "url": "${[ BASE_URL ]}/message/some-message-id",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_sGYX3Aq3DT",
+        "createdAt": "2025-08-13T16:56:05.226915400",
+        "updatedAt": "2025-08-13T16:57:47.386619400",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_iEizASKBw4",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"id\": \"some-message-id\",\n  \"message\": \"some-content\",\n  \"authorId\": \"some-user-id\",\n  \"channelId\": \"some-channel-id\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "H4zArTpHah"
+          }
+        ],
+        "method": "POST",
+        "name": "Create Message",
+        "sortPriority": -1755103955186.999,
+        "url": "${[ BASE_URL ]}/message/new",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Mi5P8UVQSi",
+        "createdAt": "2025-08-13T16:56:05.226677900",
+        "updatedAt": "2025-08-13T16:58:28.859417500",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_iEizASKBw4",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "DELETE",
+        "name": "Delete Message",
+        "sortPriority": -1755103955186.998,
+        "url": "${[ BASE_URL ]}/message/some-message-id",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_vh6KDRTpxD",
+        "createdAt": "2025-08-13T16:52:36.240381100",
+        "updatedAt": "2025-08-13T16:53:56.989886900",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_kWWBg3paMf",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "DELETE",
+        "name": "Delete User",
+        "sortPriority": -1755103955186.998,
+        "url": "${[ BASE_URL ]}/user/some-user-id",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_hG2bCofkkL",
+        "createdAt": "2025-08-13T16:52:36.085318300",
+        "updatedAt": "2025-08-13T16:54:10.810932200",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_kWWBg3paMf",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"id\": \"some-user-id\",\n  \"username\": \"Jag\",\n  \"channelId\": \"some-channel-id\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "H4zArTpHah"
+          }
+        ],
+        "method": "POST",
+        "name": "Create User",
+        "sortPriority": -1755103955186.999,
+        "url": "${[ BASE_URL ]}/user/new",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_ECoQynBxwf",
+        "createdAt": "2025-08-13T16:52:35.189628",
+        "updatedAt": "2025-08-13T16:53:52.510750900",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": "fl_kWWBg3paMf",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Get User",
+        "sortPriority": -1755103955187.0,
+        "url": "${[ BASE_URL ]}/user/some-user-id",
+        "urlParameters": []
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": [
+      {
+        "model": "websocket_request",
+        "id": "wr_fmLXTVDNp3",
+        "createdAt": "2025-08-14T02:34:18.755077600",
+        "updatedAt": "2025-08-14T07:39:27.972677100",
+        "workspaceId": "wk_kAtLv53kSe",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "message": "",
+        "name": "Web Socket conenction",
+        "sortPriority": -1755138900000.0,
+        "url": "ws://localhost:8080/ws",
+        "urlParameters": []
+      }
+    ]
+  }
+}
