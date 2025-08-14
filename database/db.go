@@ -1,7 +1,10 @@
 package database
 
+import "sync"
+
 type DB struct {
 	StoredData map[string]any
+	rw         sync.RWMutex
 }
 
 type ChannelType struct {
@@ -22,11 +25,16 @@ func NewDB() *DB {
 }
 
 func (db *DB) Get(key string) any {
+	db.rw.RLock()
+	defer db.rw.RUnlock()
 	return db.StoredData[key]
 
 }
 
 func (db *DB) Set(key string, value any) {
+	db.rw.Lock()
+	defer db.rw.Unlock()
+
 	DbChan <- ChannelType{
 		Type: "CREATE",
 		Data: map[string]any{
@@ -38,6 +46,9 @@ func (db *DB) Set(key string, value any) {
 }
 
 func (db *DB) Delete(key string) {
+	db.rw.Lock()
+	defer db.rw.Unlock()
+
 	value := db.StoredData[key]
 	DbChan <- ChannelType{
 		Type: "DELETE",
